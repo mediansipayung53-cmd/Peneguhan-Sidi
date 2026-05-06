@@ -1,0 +1,13 @@
+# Abaikan file video
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Abaikan file sistem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Abaikan folder VS Code (opsional)
+.vscode/

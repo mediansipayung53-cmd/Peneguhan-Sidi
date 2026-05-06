@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Sidi - Ecca Febriana & Cristin Purba</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Halaman Pembuka -->
+    <div id="cover-page" class="cover-page">
+        <!-- Decorative Flowers -->
+        <div class="floral-left"></div>
+        <div class="floral-right"></div>
+        
+        <!-- Main Content Wrapper -->
+        <div class="cover-main-wrapper">
+            <!-- Image Container -->
+            <div class="invitation-image-container">
+                <div class="invitation-image"></div>
+            </div>
+            
+            <!-- Button Container -->
+            <div class="button-container">
+                <button class="open-invitation-btn" onclick="openInvitation()">
+                    <span>Buka Undangan</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Undangan Utama -->
+    <div id="main-invitation" class="main-invitation hidden">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#event" onclick="scrollToSection('event')">Acara</a></li>
+                <li><a href="#gallery" onclick="scrollToSection('gallery')">Galeri</a></li>
+                <li><a href="#location" onclick="scrollToSection('location')">Lokasi</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section Home -->
+        <section id="home" class="section home-section">
+            <div class="container">
+                <div class="home-content-card">
+                    <h1 class="main-title">Undangan Sidi</h1>
+                    <div class="couple-names">
+                        <h2>Ecca Febriana</h2>
+                        <div class="divider">&</div>
+                        <h2>Cristin Purba</h2>
+                    </div>
+                    <p class="verse">
+                        "Karena itu pergilah, jadikanlah semua bangsa murid-Ku dan baptislah mereka dalam nama Bapa dan Anak dan Roh Kudus"
+                        <br><em>- Matius 28:19 -</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Event -->
+        <section id="event" class="section event-section">
+            <div class="container">
+                <h2 class="section-title">Detail Acara</h2>
+                <div class="event-card">
+                    <div class="event-icon">⛪</div>
+                    <h3>Peneguhan Sidi</h3>
+                    <div class="event-details">
+                        <p><strong>Hari/Tanggal:</strong> Minggu, 17 Mei 2026</p>
+                        <p><strong>Waktu:</strong> 08.00 - 15.00 WIB</p>
+                        <p><strong>Tempat:</strong> Jl. Lestari, Karang Sari</p>
+                    </div>
+                    <p class="event-description">
+                        Dengan sukacita kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara peneguhan sidi kami. 
+                        Kehadiran dan doa restu Anda sangat berarti bagi kami.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Gallery -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <h2 class="section-title">Galeri</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="placeholder-img">📸</div>
+                        <p>Persiapan Sidi</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="placeholder-img">📸</div>
+                        <p>Belajar Katekisasi</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="placeholder-img">📸</div>
+                        <p>Kegiatan Gereja</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="placeholder-img">📸</div>
+                        <p>Persekutuan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Location -->
+        <section id="location" class="section location-section">
+            <div class="container">
+                <h2 class="section-title">Lokasi Acara</h2>
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>📍 Alamat Lengkap</h3>
+                        <p>Jl. Lestari, Karang Sari</p>
+                        <div class="contact-details">
+                            <p><strong>Informasi:</strong> 0852-6608-4353</p>
+                        </div>
+                        <button class="maps-btn" onclick="openMaps()">
+                            Buka di Google Maps
+                        </button>
+                    </div>
+                    <div class="map-placeholder">
+                        <div class="map-icon">🗺️</div>
+                        <p>Peta Lokasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Terima kasih atas kehadiran dan doa restu Anda</p>
+                <p class="footer-names">Ecca & Cristin</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Audio Background (Optional) -->
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
