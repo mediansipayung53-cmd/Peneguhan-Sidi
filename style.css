@@ -302,9 +302,9 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 }
 .ornament-line span:last-child { background: linear-gradient(90deg, #764ba2, transparent); }
 .ornament-line i { color: #667eea; font-size: 1rem; }
-.ornament-line.white span { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7)); }
-.ornament-line.white span:last-child { background: linear-gradient(90deg, rgba(255,255,255,0.7), transparent); }
-.ornament-line.white i { color: rgba(255,255,255,0.9); }
+.ornament-line.white span { background: linear-gradient(90deg, transparent, rgba(45,55,72,0.7)); }
+.ornament-line.white span:last-child { background: linear-gradient(90deg, rgba(45,55,72,0.7), transparent); }
+.ornament-line.white i { color: rgba(45,55,72,0.9); text-shadow: 0 2px 8px rgba(255,255,255,0.8); }
 
 /* ===== REVEAL ANIMATIONS ===== */
 .reveal, .reveal-left, .reveal-right {
@@ -319,58 +319,99 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 
 /* ===== HOME SECTION ===== */
 .home-section { 
-    background: linear-gradient(135deg, #b8d4f1 0%, #d4b5f7 50%, #f4c4d8 100%); 
+    background-image: url("jpg(4)");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     text-align: center;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .home-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.4;
+    background: linear-gradient(135deg, rgba(168,200,236,0.25) 0%, rgba(212,181,247,0.25) 50%, rgba(244,166,205,0.25) 100%);
     pointer-events: none;
     z-index: 0;
 }
 .home-bg-decoration {
     position: absolute; inset: 0; pointer-events: none;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.6) 0%, transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.5) 0%, transparent 30%),
-        radial-gradient(circle at 50% 50%, rgba(168,200,236,0.3) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.25) 0%, transparent 25%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 30%),
+        radial-gradient(circle at 35% 65%, rgba(255,255,255,0.15) 0%, transparent 20%),
+        radial-gradient(circle at 65% 35%, rgba(255,255,255,0.2) 0%, transparent 22%);
     z-index: 1;
 }
-.home-content { max-width: 750px; margin: 0 auto; position: relative; z-index: 2; }
+.home-content { 
+    max-width: 750px; 
+    margin: 0 auto; 
+    position: relative; 
+    z-index: 2;
+    width: 100%;
+    padding: 2rem 1rem;
+}
 .home-label {
-    font-size: 0.9rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
-    color: #667eea; margin-bottom: 1rem;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+    color: #2d3748; margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
 }
 .main-title {
     font-family: "Dancing Script", cursive; font-size: 5rem; font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: #1a202c;
     margin-bottom: 1.5rem; line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,0.7);
 }
 .couple-names { display: flex; align-items: center; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap; }
 .person-name h2 {
-    font-family: "Dancing Script", cursive; font-size: 3rem; font-weight: 700; color: #4a5568;
+    font-family: "Dancing Script", cursive; font-size: 3rem; font-weight: 700; 
+    color: #2d3748;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.9), 0 0 25px rgba(255,255,255,0.7);
 }
 .divider-and span {
     font-family: "Dancing Script", cursive; font-size: 3rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    color: #2d3748;
     font-weight: 700;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
 }
 .verse-box {
-    background: white; padding: 2.5rem; border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-top: 2.5rem;
-    border-left: 4px solid #667eea; position: relative; text-align: left;
+    background: transparent; 
+    padding: 2.5rem; 
+    border-radius: 20px;
+    margin-top: 2.5rem;
+    border-left: none; 
+    position: relative; 
+    text-align: left;
 }
-.quote-icon { color: #667eea; font-size: 2rem; opacity: 0.3; margin-bottom: 1rem; display: block; }
-.verse { color: #4a5568; font-size: 1.05rem; line-height: 1.9; font-style: italic; }
-.verse-ref { color: #667eea; font-weight: 600; margin-top: 1rem; font-size: 0.95rem; }
+.quote-icon { 
+    color: #2d3748; 
+    font-size: 2rem; 
+    opacity: 0.7; 
+    margin-bottom: 1rem; 
+    display: block;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+}
+.verse { 
+    color: #1a202c; 
+    font-size: 1.1rem; 
+    line-height: 1.9; 
+    font-style: italic;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,0.7);
+    font-weight: 600;
+}
+.verse-ref { 
+    color: #2d3748; 
+    font-weight: 700; 
+    margin-top: 1rem; 
+    font-size: 1rem;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+}
 
 /* ===== EVENT SECTION ===== */
 .event-section { 
@@ -815,18 +856,124 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
     .couple-names { flex-direction: column; gap: 0.5rem; }
     .countdown-item { padding: 1.5rem 1.8rem; min-width: 90px; }
     .countdown-number { font-size: 2.5rem; }
+    
+    /* Home section mobile */
+    .home-section {
+        background-position: center center;
+        background-size: cover;
+        padding: 2rem 0;
+    }
+    .home-content { 
+        max-width: 100%; 
+        padding: 1rem;
+    }
+    .verse-box {
+        padding: 1.8rem 1.5rem;
+    }
 }
+
 @media (max-width: 600px) {
     .cover-main-wrapper { max-width: 100%; }
     .invitation-image-container { padding: 10px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .section-title { font-size: 2.5rem; }
-    .main-title { font-size: 2.8rem; }
-    .person-name h2 { font-size: 2.2rem; }
+    .main-title { font-size: 2.5rem; }
+    .person-name h2 { font-size: 2rem; }
+    .divider-and span { font-size: 2rem; }
     .event-card { padding: 2rem 1.5rem; }
     .rsvp-form-card, .rsvp-messages-card { padding: 1.8rem 1.5rem; }
     .location-card { padding: 2rem 1.5rem; }
     .countdown-wrapper { gap: 0.5rem; }
     .countdown-separator { font-size: 2rem; }
     .music-player { bottom: 15px; right: 15px; padding: 8px 12px; }
+    
+    /* Home section mobile optimization */
+    .home-section {
+        background-position: center center;
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-content { 
+        max-width: 100%; 
+        padding: 1.5rem;
+    }
+    .home-label {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+    .verse-box {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .verse {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    .verse-ref {
+        font-size: 0.85rem;
+    }
+    .quote-icon {
+        font-size: 1.5rem;
+    }
+    .couple-names {
+        gap: 0.3rem;
+        margin: 1.5rem 0;
+    }
+    .ornament-line {
+        margin-top: 0.8rem;
+    }
+    .ornament-line span {
+        width: 50px;
+    }
+    
+    /* Section padding mobile */
+    .section {
+        padding: 5rem 0 3rem;
+    }
+    
+    /* Container mobile */
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-title { font-size: 2rem; }
+    .person-name h2 { font-size: 1.7rem; }
+    .divider-and span { font-size: 1.7rem; }
+    .verse {
+        font-size: 0.9rem;
+    }
+    .home-content {
+        padding: 1rem;
+    }
+    .verse-box {
+        padding: 1.2rem;
+    }
+}
+
+/* Mobile landscape optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+    .home-section {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    .section {
+        min-height: auto;
+        padding: 4rem 0 3rem;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .person-name h2 {
+        font-size: 1.8rem;
+    }
+    .verse-box {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
 }
