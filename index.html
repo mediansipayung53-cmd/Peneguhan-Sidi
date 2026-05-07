@@ -5,141 +5,373 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Sidi - Ecca Febriana & Cristin Purba</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Halaman Pembuka -->
+
+    <!-- ===== COVER PAGE ===== -->
     <div id="cover-page" class="cover-page">
-        <!-- Decorative Flowers -->
-        <div class="floral-left"></div>
-        <div class="floral-right"></div>
-        
-        <!-- Main Content Wrapper -->
+        <div class="cover-particles" id="coverParticles"></div>
         <div class="cover-main-wrapper">
-            <!-- Image Container -->
             <div class="invitation-image-container">
                 <div class="invitation-image"></div>
             </div>
-            
-            <!-- Button Container -->
             <div class="button-container">
                 <button class="open-invitation-btn" onclick="openInvitation()">
+                    <i class="fas fa-envelope-open-text"></i>
                     <span>Buka Undangan</span>
                 </button>
             </div>
         </div>
+        <div class="floral-left"></div>
+        <div class="floral-right"></div>
     </div>
 
-    <!-- Halaman Undangan Utama -->
+    <!-- ===== MAIN INVITATION ===== -->
     <div id="main-invitation" class="main-invitation hidden">
-        <nav class="navbar">
+
+        <!-- Floating Petals -->
+        <div class="petals-container" id="petalsContainer"></div>
+
+        <!-- Music Player -->
+        <div class="music-player" id="musicPlayer">
+            <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+                <i class="fas fa-music" id="musicIcon"></i>
+            </button>
+            <div class="music-wave" id="musicWave">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-logo">Sidi 2026</div>
             <ul>
-                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
-                <li><a href="#event" onclick="scrollToSection('event')">Acara</a></li>
-                <li><a href="#gallery" onclick="scrollToSection('gallery')">Galeri</a></li>
-                <li><a href="#location" onclick="scrollToSection('location')">Lokasi</a></li>
+                <li><a href="#home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#event" onclick="scrollToSection('event')"><i class="fas fa-church"></i> Acara</a></li>
+                <li><a href="#countdown" onclick="scrollToSection('countdown')"><i class="fas fa-clock"></i> Hitung Mundur</a></li>
+                <li><a href="#gallery" onclick="scrollToSection('gallery')"><i class="fas fa-images"></i> Galeri</a></li>
+                <li><a href="#location" onclick="scrollToSection('location')"><i class="fas fa-map-marker-alt"></i> Lokasi</a></li>
+                <li><a href="#rsvp" onclick="scrollToSection('rsvp')"><i class="fas fa-comment-dots"></i> Ucapan</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
         </nav>
 
-        <!-- Section Home -->
+        <!-- ===== SECTION HOME ===== -->
         <section id="home" class="section home-section">
+            <div class="home-bg-decoration"></div>
             <div class="container">
-                <div class="home-content-card">
+                <div class="home-content reveal">
+                    <p class="home-label">Peneguhan Sidi</p>
                     <h1 class="main-title">Undangan Sidi</h1>
-                    <div class="couple-names">
-                        <h2>Ecca Febriana</h2>
-                        <div class="divider">&</div>
-                        <h2>Cristin Purba</h2>
+                    <div class="ornament-line">
+                        <span></span><i class="fas fa-cross"></i><span></span>
                     </div>
-                    <p class="verse">
-                        "Karena itu pergilah, jadikanlah semua bangsa murid-Ku dan baptislah mereka dalam nama Bapa dan Anak dan Roh Kudus"
-                        <br><em>- Matius 28:19 -</em>
-                    </p>
+                    <div class="couple-names">
+                        <div class="person-name reveal-left">
+                            <h2>Ecca Febriana</h2>
+                        </div>
+                        <div class="divider-and">
+                            <span>&</span>
+                        </div>
+                        <div class="person-name reveal-right">
+                            <h2>Cristin Purba</h2>
+                        </div>
+                    </div>
+                    <div class="verse-box reveal">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="verse">
+                            "Karena itu pergilah, jadikanlah semua bangsa murid-Ku dan baptislah mereka dalam nama Bapa dan Anak dan Roh Kudus, dan ajarlah mereka melakukan segala sesuatu yang telah Kuperintahkan kepadamu."
+                        </p>
+                        <p class="verse-ref">— Matius 28:19-20 —</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Event -->
+        <!-- ===== SECTION EVENT ===== -->
         <section id="event" class="section event-section">
             <div class="container">
-                <h2 class="section-title">Detail Acara</h2>
-                <div class="event-card">
-                    <div class="event-icon">⛪</div>
-                    <h3>Peneguhan Sidi</h3>
-                    <div class="event-details">
-                        <p><strong>Hari/Tanggal:</strong> Minggu, 17 Mei 2026</p>
-                        <p><strong>Waktu:</strong> 08.00 - 15.00 WIB</p>
-                        <p><strong>Tempat:</strong> Jl. Lestari, Karang Sari</p>
+                <div class="section-header reveal">
+                    <p class="section-label">Jadwal Kegiatan</p>
+                    <h2 class="section-title">Detail Acara</h2>
+                    <div class="ornament-line"><span></span><i class="fas fa-star"></i><span></span></div>
+                </div>
+                <div class="event-cards-wrapper">
+                    <div class="event-card reveal-left">
+                        <div class="event-card-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3>Ibadah Peneguhan Sidi</h3>
+                        <div class="event-info-list">
+                            <div class="event-info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <span class="info-label">Hari / Tanggal</span>
+                                    <span class="info-value">Minggu, 17 Mei 2026</span>
+                                </div>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <span class="info-label">Waktu</span>
+                                    <span class="info-value">08.00 – 15.00 WIB</span>
+                                </div>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Tempat</span>
+                                    <span class="info-value">Jl. Lestari, Karang Sari</span>
+                                </div>
+                            </div>
+                            <div class="event-info-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <span class="info-label">Info</span>
+                                    <span class="info-value">0852-8608-4353</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="event-description">
-                        Dengan sukacita kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara peneguhan sidi kami. 
-                        Kehadiran dan doa restu Anda sangat berarti bagi kami.
-                    </p>
+                    <div class="event-card reveal-right">
+                        <div class="event-card-icon">
+                            <i class="fas fa-hands-praying"></i>
+                        </div>
+                        <h3>Pesan & Harapan</h3>
+                        <p class="event-message">
+                            Dengan penuh sukacita dan rasa syukur kepada Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu dalam acara Peneguhan Sidi kami.
+                        </p>
+                        <p class="event-message" style="margin-top: 1rem;">
+                            Kehadiran dan doa Anda adalah berkat terbesar bagi kami dalam melangkah maju sebagai anggota gereja yang telah diteguhkan.
+                        </p>
+                        <div class="dress-code">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Dress Code: <strong>Formal / Rapi</strong></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Gallery -->
+        <!-- ===== SECTION COUNTDOWN ===== -->
+        <section id="countdown" class="section countdown-section">
+            <div class="countdown-bg"></div>
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-label">Menuju Hari Istimewa</p>
+                    <h2 class="section-title" style="color:white;">Hitung Mundur</h2>
+                    <div class="ornament-line white"><span></span><i class="fas fa-hourglass-half"></i><span></span></div>
+                </div>
+                <div class="countdown-wrapper reveal">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Hari</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Jam</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Menit</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Detik</div>
+                    </div>
+                </div>
+                <p class="countdown-date reveal">Minggu, 17 Mei 2026 • 08.00 WIB</p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION GALLERY ===== -->
         <section id="gallery" class="section gallery-section">
             <div class="container">
-                <h2 class="section-title">Galeri</h2>
+                <div class="section-header reveal">
+                    <p class="section-label">Momen Berharga</p>
+                    <h2 class="section-title">Galeri Foto</h2>
+                    <div class="ornament-line"><span></span><i class="fas fa-camera"></i><span></span></div>
+                </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="placeholder-img">📸</div>
+                    <div class="gallery-item reveal" onclick="openLightbox(0)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #a8c8ec, #d4b5f7);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
                         <p>Persiapan Sidi</p>
                     </div>
-                    <div class="gallery-item">
-                        <div class="placeholder-img">📸</div>
-                        <p>Belajar Katekisasi</p>
+                    <div class="gallery-item reveal" onclick="openLightbox(1)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #f4a6cd, #a8c8ec);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <p>Katekisasi</p>
                     </div>
-                    <div class="gallery-item">
-                        <div class="placeholder-img">📸</div>
+                    <div class="gallery-item reveal" onclick="openLightbox(2)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #d4b5f7, #f4a6cd);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
                         <p>Kegiatan Gereja</p>
                     </div>
-                    <div class="gallery-item">
-                        <div class="placeholder-img">📸</div>
+                    <div class="gallery-item reveal" onclick="openLightbox(3)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #a8c8ec, #f4a6cd);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
                         <p>Persekutuan</p>
                     </div>
+                    <div class="gallery-item reveal" onclick="openLightbox(4)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #d4b5f7, #a8c8ec);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <p>Doa Bersama</p>
+                    </div>
+                    <div class="gallery-item reveal" onclick="openLightbox(5)">
+                        <div class="gallery-img" style="background: linear-gradient(135deg, #f4a6cd, #d4b5f7);">
+                            <i class="fas fa-image"></i>
+                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <p>Hari Istimewa</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section Location -->
+        <!-- ===== SECTION LOCATION ===== -->
         <section id="location" class="section location-section">
             <div class="container">
-                <h2 class="section-title">Lokasi Acara</h2>
-                <div class="location-card">
+                <div class="section-header reveal">
+                    <p class="section-label">Temukan Kami</p>
+                    <h2 class="section-title">Lokasi Acara</h2>
+                    <div class="ornament-line"><span></span><i class="fas fa-map-pin"></i><span></span></div>
+                </div>
+                <div class="location-card reveal">
                     <div class="location-info">
-                        <h3>📍 Alamat Lengkap</h3>
-                        <p>Jl. Lestari, Karang Sari</p>
-                        <div class="contact-details">
-                            <p><strong>Informasi:</strong> 0852-6608-4353</p>
+                        <div class="location-icon-big">
+                            <i class="fas fa-church"></i>
                         </div>
+                        <h3>Jl. Lestari, Karang Sari</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Karang Sari, Indonesia</p>
+                        <p><i class="fas fa-calendar-alt"></i> Minggu, 17 Mei 2026</p>
+                        <p><i class="fas fa-clock"></i> 08.00 – 15.00 WIB</p>
+                        <p><i class="fas fa-phone-alt"></i> 0852-8608-4353</p>
                         <button class="maps-btn" onclick="openMaps()">
-                            Buka di Google Maps
+                            <i class="fas fa-directions"></i> Petunjuk Arah
                         </button>
                     </div>
-                    <div class="map-placeholder">
-                        <div class="map-icon">🗺️</div>
-                        <p>Peta Lokasi</p>
+                    <div class="map-embed">
+                        <div class="map-placeholder-box">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Jl. Lestari, Karang Sari</p>
+                            <small>Klik "Petunjuk Arah" untuk membuka Google Maps</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
+        <!-- ===== SECTION RSVP / UCAPAN ===== -->
+        <section id="rsvp" class="section rsvp-section">
             <div class="container">
-                <p>Terima kasih atas kehadiran dan doa restu Anda</p>
-                <p class="footer-names">Ecca & Cristin</p>
+                <div class="section-header reveal">
+                    <p class="section-label">Sampaikan Doamu</p>
+                    <h2 class="section-title">Ucapan & Doa</h2>
+                    <div class="ornament-line"><span></span><i class="fas fa-heart"></i><span></span></div>
+                </div>
+                <div class="rsvp-wrapper">
+                    <div class="rsvp-form-card reveal-left">
+                        <h3><i class="fas fa-pen"></i> Kirim Ucapan</h3>
+                        <form id="rsvpForm" onsubmit="submitRSVP(event)">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> Nama Lengkap</label>
+                                <input type="text" id="guestName" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-check-circle"></i> Konfirmasi Kehadiran</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="attendance" value="hadir" required>
+                                        <span><i class="fas fa-check"></i> Hadir</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="attendance" value="tidak_hadir">
+                                        <span><i class="fas fa-times"></i> Tidak Hadir</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-comment"></i> Ucapan & Doa</label>
+                                <textarea id="guestMessage" placeholder="Tulis ucapan dan doa Anda di sini..." rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                            </button>
+                        </form>
+                    </div>
+                    <div class="rsvp-messages-card reveal-right">
+                        <h3><i class="fas fa-comments"></i> Ucapan Tamu</h3>
+                        <div class="messages-list" id="messagesList">
+                            <div class="message-item">
+                                <div class="message-avatar">A</div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="message-name">Anita Sari</span>
+                                        <span class="message-badge hadir">Hadir</span>
+                                    </div>
+                                    <p>Selamat atas peneguhan sidinya! Semoga menjadi anak Tuhan yang setia dan berbuah. GBU 🙏</p>
+                                </div>
+                            </div>
+                            <div class="message-item">
+                                <div class="message-avatar">B</div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="message-name">Budi Santoso</span>
+                                        <span class="message-badge hadir">Hadir</span>
+                                    </div>
+                                    <p>Tuhan memberkati perjalanan imanmu. Selamat ya! 🌸</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-decoration"></div>
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-label">Dengan Kasih</p>
+                    <h3 class="footer-names">Ecca Febriana & Cristin Purba</h3>
+                    <div class="ornament-line white"><span></span><i class="fas fa-cross"></i><span></span></div>
+                    <p class="footer-verse">"Tuhan adalah gembalaku, takkan kekurangan aku." — Mazmur 23:1</p>
+                    <p class="footer-copy">© 2026 Undangan Digital Peneguhan Sidi</p>
+                </div>
             </div>
         </footer>
+
+    </div><!-- end main-invitation -->
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+            <div class="lightbox-img" id="lightboxImg"></div>
+        </div>
     </div>
 
-    <!-- Audio Background (Optional) -->
-    <audio id="background-music" loop>
-        <source src="background-music.mp3" type="audio/mpeg">
-    </audio>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
 </body>
