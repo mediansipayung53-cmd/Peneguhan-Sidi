@@ -19,6 +19,7 @@ function openInvitation() {
 function startAnimations() {
     createParticles();
     createPetals();
+    createBokeh();
     startCountdown();
     observeElements();
 }
@@ -52,6 +53,31 @@ function createPetals() {
         container.appendChild(p);
         setTimeout(() => p.remove(), 15000);
     }, 3000);
+}
+
+// Bokeh particles
+function createBokeh() {
+    const container = document.getElementById("bokehContainer");
+    if(!container) return;
+    const colors = [
+        "rgba(168,200,236,0.4)",
+        "rgba(212,181,247,0.4)",
+        "rgba(244,166,205,0.4)",
+        "rgba(255,255,255,0.5)"
+    ];
+    setInterval(() => {
+        const b = document.createElement("div");
+        b.className = "bokeh";
+        const size = Math.random()*60 + 20;
+        b.style.width = size + "px";
+        b.style.height = size + "px";
+        b.style.left = Math.random()*100 + "%";
+        b.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random()*colors.length)]} 0%, transparent 70%)`;
+        b.style.animationDuration = (Math.random()*8+12) + "s";
+        b.style.filter = `blur(${Math.random()*10+5}px)`;
+        container.appendChild(b);
+        setTimeout(() => b.remove(), 20000);
+    }, 800);
 }
 
 // Countdown
