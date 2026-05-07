@@ -31,8 +31,8 @@
     <!-- ===== MAIN INVITATION ===== -->
     <div id="main-invitation" class="main-invitation hidden">
 
-        <!-- Floating Petals -->
-        <div class="petals-container" id="petalsContainer"></div>
+        <!-- Floating Fireflies (Kunang-kunang) -->
+        <div class="fireflies-container" id="firefliesContainer"></div>
 
         <!-- Bokeh Particles -->
         <div class="bokeh-container" id="bokehContainer"></div>
@@ -54,7 +54,6 @@
                 <li><a href="#home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#event" onclick="scrollToSection('event')"><i class="fas fa-church"></i> Acara</a></li>
                 <li><a href="#countdown" onclick="scrollToSection('countdown')"><i class="fas fa-clock"></i> Hitung Mundur</a></li>
-                <li><a href="#gallery" onclick="scrollToSection('gallery')"><i class="fas fa-images"></i> Galeri</a></li>
                 <li><a href="#location" onclick="scrollToSection('location')"><i class="fas fa-map-marker-alt"></i> Lokasi</a></li>
                 <li><a href="#rsvp" onclick="scrollToSection('rsvp')"><i class="fas fa-comment-dots"></i> Ucapan</a></li>
             </ul>
@@ -73,16 +72,8 @@
                     <div class="ornament-line white">
                         <span></span><i class="fas fa-cross"></i><span></span>
                     </div>
-                    <div class="couple-names">
-                        <div class="person-name reveal-left">
-                            <h2>Ecca Febriana</h2>
-                        </div>
-                        <div class="divider-and">
-                            <span></span>
-                        </div>
-                        <div class="person-name reveal-right">
-                            <h2>Cristin Purba</h2>
-                        </div>
+                    <div class="names-wrapper reveal">
+                        <h2 class="person-name">Ecca Febriana Cristin Purba</h2>
                     </div>
                     <div class="verse-box reveal">
                         <i class="fas fa-quote-left quote-icon"></i>
@@ -194,60 +185,6 @@
             </div>
         </section>
 
-        <!-- ===== SECTION GALLERY ===== -->
-        <section id="gallery" class="section gallery-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-label">Momen Berharga</p>
-                    <h2 class="section-title">Galeri Foto</h2>
-                    <div class="ornament-line"><span></span><i class="fas fa-camera"></i><span></span></div>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item reveal" onclick="openLightbox(0)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #a8c8ec, #d4b5f7);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Persiapan Sidi</p>
-                    </div>
-                    <div class="gallery-item reveal" onclick="openLightbox(1)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #f4a6cd, #a8c8ec);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Katekisasi</p>
-                    </div>
-                    <div class="gallery-item reveal" onclick="openLightbox(2)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #d4b5f7, #f4a6cd);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Kegiatan Gereja</p>
-                    </div>
-                    <div class="gallery-item reveal" onclick="openLightbox(3)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #a8c8ec, #f4a6cd);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Persekutuan</p>
-                    </div>
-                    <div class="gallery-item reveal" onclick="openLightbox(4)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #d4b5f7, #a8c8ec);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Doa Bersama</p>
-                    </div>
-                    <div class="gallery-item reveal" onclick="openLightbox(5)">
-                        <div class="gallery-img" style="background: linear-gradient(135deg, #f4a6cd, #d4b5f7);">
-                            <i class="fas fa-image"></i>
-                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                        </div>
-                        <p>Hari Istimewa</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ===== SECTION LOCATION ===== -->
         <section id="location" class="section location-section">

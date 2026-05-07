@@ -18,7 +18,7 @@ function openInvitation() {
 // Start animations
 function startAnimations() {
     createParticles();
-    createPetals();
+    createFireflies();
     createBokeh();
     startCountdown();
     observeElements();
@@ -40,19 +40,21 @@ function createParticles() {
     }
 }
 
-// Petals
-function createPetals() {
-    const container = document.getElementById("petalsContainer");
+// Fireflies (Kunang-kunang)
+function createFireflies() {
+    const container = document.getElementById("firefliesContainer");
     if(!container) return;
     setInterval(() => {
-        const p = document.createElement("div");
-        p.className = "petal";
-        p.textContent = ["🌸","🌺","🌼","🌻","🌷"][Math.floor(Math.random()*5)];
-        p.style.left = Math.random()*100 + "%";
-        p.style.animationDuration = (Math.random()*5+10) + "s";
-        container.appendChild(p);
-        setTimeout(() => p.remove(), 15000);
-    }, 3000);
+        const f = document.createElement("div");
+        f.className = "firefly";
+        f.style.left = Math.random()*100 + "%";
+        f.style.top = (Math.random()*50 + 50) + "%"; // Start from bottom half
+        const duration = Math.random()*8 + 12; // 12-20 seconds
+        f.style.animationDuration = duration + "s";
+        f.style.animationDelay = Math.random()*2 + "s";
+        container.appendChild(f);
+        setTimeout(() => f.remove(), (duration + 2) * 1000);
+    }, 1500);
 }
 
 // Bokeh particles
@@ -142,13 +144,23 @@ function toggleNav() {
     document.querySelector(".navbar ul").classList.toggle("open");
 }
 
-// Observe elements
+// Observe elements - dengan animasi saat scroll naik dan turun
 function observeElements() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) entry.target.classList.add("visible");
+            if(entry.isIntersecting) {
+                // Element masuk viewport - tampilkan
+                entry.target.classList.add("visible");
+            } else {
+                // Element keluar viewport - sembunyikan lagi untuk animasi ulang
+                entry.target.classList.remove("visible");
+            }
         });
-    }, {threshold: 0.1});
+    }, {
+        threshold: 0.15, // Trigger saat 15% element terlihat
+        rootMargin: "-50px" // Offset untuk trigger lebih smooth
+    });
+    
     document.querySelectorAll(".reveal, .reveal-left, .reveal-right").forEach(el => observer.observe(el));
 }
 
@@ -204,7 +216,7 @@ function showToast(msg) {
 
 // Scroll detection
 window.addEventListener("scroll", () => {
-    const sections = ["home","event","countdown","gallery","location","rsvp"];
+    const sections = ["home","event","countdown","location","rsvp"];
     const scrollPos = window.scrollY + 150;
     sections.forEach(id => {
         const el = document.getElementById(id);
