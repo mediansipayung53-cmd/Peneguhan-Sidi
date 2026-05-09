@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Sidi - Ecca Febriana Cristin Purba</title>
+    <title>SIDI ECCA INVITATION</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- ===== COVER PAGE ===== -->
@@ -20,7 +24,7 @@
             <div class="button-container">
                 <button class="open-invitation-btn" onclick="openInvitation()">
                     <i class="fas fa-envelope-open-text"></i>
-                    <span>Buka Undangan</span>
+                    <span>OPEN INVITATION</span>
                 </button>
             </div>
         </div>
@@ -36,6 +40,14 @@
 
         <!-- Bokeh Particles -->
         <div class="bokeh-container" id="bokehContainer"></div>
+
+        <!-- ================================================ -->
+        <!-- 🎵 GANTI LINK LAGU DI SINI (src="...")          -->
+        <!-- Bisa pakai link MP3 dari internet atau file lokal -->
+        <!-- Contoh: src="https://link-lagu-kamu.mp3"         -->
+        <!-- ================================================ -->
+        <audio id="bgMusic" loop preload="auto" src="lagu-undangan.mp3">
+        </audio>
 
         <!-- Music Player -->
         <div class="music-player" id="musicPlayer">
@@ -53,9 +65,12 @@
             <ul>
                 <li><a href="#home" onclick="scrollToSection('home')"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#event" onclick="scrollToSection('event')"><i class="fas fa-church"></i> Acara</a></li>
-                <li><a href="#countdown" onclick="scrollToSection('countdown')"><i class="fas fa-clock"></i> Hitung Mundur</a></li>
-                <li><a href="#location" onclick="scrollToSection('location')"><i class="fas fa-map-marker-alt"></i> Lokasi</a></li>
-                <li><a href="#rsvp" onclick="scrollToSection('rsvp')"><i class="fas fa-comment-dots"></i> Ucapan</a></li>
+                <li><a href="#countdown" onclick="scrollToSection('countdown')"><i class="fas fa-clock"></i> Hitung
+                        Mundur</a></li>
+                <li><a href="#location" onclick="scrollToSection('location')"><i class="fas fa-map-marker-alt"></i>
+                        Lokasi</a></li>
+                <li><a href="#rsvp" onclick="scrollToSection('rsvp')"><i class="fas fa-comment-dots"></i> Ucapan</a>
+                </li>
             </ul>
             <div class="hamburger" onclick="toggleNav()">
                 <span></span><span></span><span></span>
@@ -78,9 +93,11 @@
                     <div class="verse-box reveal">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="verse">
-                            "Karena itu pergilah, jadikanlah semua bangsa murid-Ku dan baptislah mereka dalam nama Bapa dan Anak dan Roh Kudus, dan ajarlah mereka melakukan segala sesuatu yang telah Kuperintahkan kepadamu."
+                            "Janganlah takut, sebab Aku menyertai engkau, janganlah bimbang, sebab Aku ini Allahmu; Aku
+                            akan meneguhkan, bahkan akan menolong engkau; Aku akan memegang engkau dengan tangan
+                            kanan-Ku yang membawa kemenangan."
                         </p>
-                        <p class="verse-ref">— Matius 28:19-20 —</p>
+                        <p class="verse-ref">—Yesaya 41:10—</p>
                     </div>
                 </div>
             </div>
@@ -90,8 +107,8 @@
         <section id="event" class="section event-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-label">Jadwal Kegiatan</p>
-                    <h2 class="section-title">Detail Acara</h2>
+                    <p class="section-label">Schedule of Activities</p>
+                    <h2 class="section-title">Event Details</h2>
                     <div class="ornament-line"><span></span><i class="fas fa-star"></i><span></span></div>
                 </div>
                 <div class="event-cards-wrapper">
@@ -112,7 +129,7 @@
                                 <i class="fas fa-clock"></i>
                                 <div>
                                     <span class="info-label">Waktu</span>
-                                    <span class="info-value">08.00 – 15.00 WIB</span>
+                                    <span class="info-value">10:00 WIB – Selesai</span>
                                 </div>
                             </div>
                             <div class="event-info-item">
@@ -135,16 +152,21 @@
                         <div class="event-card-icon">
                             <i class="fas fa-hands-praying"></i>
                         </div>
-                        <h3>Pesan & Harapan</h3>
+                        <h3>Message & Wishes</h3>
                         <p class="event-message">
-                            Dengan penuh sukacita dan rasa syukur kepada Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu dalam acara Peneguhan Sidi kami.
-                        </p>
-                        <p class="event-message" style="margin-top: 1rem;">
-                            Kehadiran dan doa Anda adalah berkat terbesar bagi kami dalam melangkah maju sebagai anggota gereja yang telah diteguhkan.
+                            haiii man temann! :3
+                            dengan penuh sukacita, aku mau ngajak kalian nih buat datang ke rumahku dalam acara
+                            peneguhan sidi aku nanti :D aku berharap banget kalian bisa hadir dan ikut jadi bagian dari
+                            momen spesial ini, karena pastinya bakal terasa lebih lengkap kalau ada kalian semua di
+                            sanaa <33. aku tau mungkin masing-masing punya kesibukan, tapi semoga tetap bisa
+                                menyempatkan waktu buat datang yaaa! :>
+                                kehadiran, doa, dan dukungan dari kalian bener-bener berarti banget buat aku ×_×. semoga
+                                nanti kita bisa kumpul, ngobrol, ketawa bareng, dan bikin kenangan yang manis yaa!! :D
+                                aku tunggu yaaa, jangan sampai ga datangg huhu T___T love u geZz ^____^
                         </p>
                         <div class="dress-code">
                             <i class="fas fa-tshirt"></i>
-                            <span>Dress Code: <strong>Formal / Rapi</strong></span>
+                            <span>Dress Code: <strong>Rapi/Sopan</strong></span>
                         </div>
                     </div>
                 </div>
@@ -156,9 +178,10 @@
             <div class="countdown-bg"></div>
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-label">Menuju Hari Istimewa</p>
-                    <h2 class="section-title" style="color:white;">Hitung Mundur</h2>
-                    <div class="ornament-line white"><span></span><i class="fas fa-hourglass-half"></i><span></span></div>
+                    <p class="section-label">Towards a Special Day</p>
+                    <h2 class="section-title" style="color:white;">Countdown</h2>
+                    <div class="ornament-line white"><span></span><i class="fas fa-hourglass-half"></i><span></span>
+                    </div>
                 </div>
                 <div class="countdown-wrapper reveal">
                     <div class="countdown-item">
@@ -181,7 +204,7 @@
                         <div class="countdown-label">Detik</div>
                     </div>
                 </div>
-                <p class="countdown-date reveal">Minggu, 17 Mei 2026 • 08.00 WIB</p>
+                <p class="countdown-date reveal">Minggu, 17 Mei 2026 • 09.00 WIB</p>
             </div>
         </section>
 
@@ -190,22 +213,22 @@
         <section id="location" class="section location-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-label">Temukan Kami</p>
-                    <h2 class="section-title">Lokasi Acara</h2>
+                    <p class="section-label">Find Us</p>
+                    <h2 class="section-title">Event Location</h2>
                     <div class="ornament-line"><span></span><i class="fas fa-map-pin"></i><span></span></div>
                 </div>
                 <div class="location-card reveal">
                     <div class="location-info">
                         <div class="location-icon-big">
-                            <i class="fas fa-church"></i>
+                            <i class="fas fa-home"></i>
                         </div>
                         <h3>Jl. Lestari, Karang Sari</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Karang Sari, Indonesia</p>
                         <p><i class="fas fa-calendar-alt"></i> Minggu, 17 Mei 2026</p>
-                        <p><i class="fas fa-clock"></i> 08.00 – 15.00 WIB</p>
+                        <p><i class="fas fa-clock"></i> 13:00 WIB – Selesai</p>
                         <p><i class="fas fa-phone-alt"></i> 0852-8608-4353</p>
                         <button class="maps-btn" onclick="openMaps()">
-                            <i class="fas fa-directions"></i> Petunjuk Arah
+                            <i class="fas fa-directions"></i> Get Directions
                         </button>
                     </div>
                     <div class="map-embed">
@@ -223,13 +246,13 @@
         <section id="rsvp" class="section rsvp-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-label">Sampaikan Doamu</p>
-                    <h2 class="section-title">Ucapan & Doa</h2>
+                    <p class="section-label">Say Your Prayers</p>
+                    <h2 class="section-title">Message & Prayers</h2>
                     <div class="ornament-line"><span></span><i class="fas fa-heart"></i><span></span></div>
                 </div>
                 <div class="rsvp-wrapper">
                     <div class="rsvp-form-card reveal-left">
-                        <h3><i class="fas fa-pen"></i> Kirim Ucapan</h3>
+                        <h3><i class="fas fa-pen"></i> Write Your Message And Prayers</h3>
                         <form id="rsvpForm" onsubmit="submitRSVP(event)">
                             <div class="form-group">
                                 <label><i class="fas fa-user"></i> Nama Lengkap</label>
@@ -250,10 +273,11 @@
                             </div>
                             <div class="form-group">
                                 <label><i class="fas fa-comment"></i> Ucapan & Doa</label>
-                                <textarea id="guestMessage" placeholder="Tulis ucapan dan doa Anda di sini..." rows="4" required></textarea>
+                                <textarea id="guestMessage" placeholder="Tulis ucapan dan doa Anda di sini..." rows="4"
+                                    required></textarea>
                             </div>
                             <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                                <i class="fas fa-paper-plane"></i>Send Message
                             </button>
                         </form>
                     </div>
@@ -261,23 +285,14 @@
                         <h3><i class="fas fa-comments"></i> Ucapan Tamu</h3>
                         <div class="messages-list" id="messagesList">
                             <div class="message-item">
-                                <div class="message-avatar">A</div>
+                                <div class="message-avatar">E</div>
                                 <div class="message-content">
                                     <div class="message-header">
-                                        <span class="message-name">Anita Sari</span>
+                                        <span class="message-name">Example Name</span>
                                         <span class="message-badge hadir">Hadir</span>
                                     </div>
-                                    <p>Selamat atas peneguhan sidinya! Semoga menjadi anak Tuhan yang setia dan berbuah. GBU 🙏</p>
-                                </div>
-                            </div>
-                            <div class="message-item">
-                                <div class="message-avatar">B</div>
-                                <div class="message-content">
-                                    <div class="message-header">
-                                        <span class="message-name">Budi Santoso</span>
-                                        <span class="message-badge hadir">Hadir</span>
-                                    </div>
-                                    <p>Tuhan memberkati perjalanan imanmu. Selamat ya! 🌸</p>
+                                    <p>Selamat atas peneguhan sidinya! Semoga menjadi anak Tuhan yang setia dan berbuah.
+                                        GBU 🙏</p>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +310,7 @@
                     <h3 class="footer-names">Ecca Febriana Christin Purba</h3>
                     <div class="ornament-line white"><span></span><i class="fas fa-cross"></i><span></span></div>
                     <p class="footer-verse">"Tuhan adalah gembalaku, takkan kekurangan aku." — Mazmur 23:1</p>
-                    <p class="footer-copy">© 2026 Undangan Digital Peneguhan Sidi</p>
+                    <p class="footer-copy">© 2026 Invitation Website Peneguhan Sidi</p>
                 </div>
             </div>
         </footer>
@@ -315,4 +330,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

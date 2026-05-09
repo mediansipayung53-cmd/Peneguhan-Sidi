@@ -1,4 +1,4 @@
-﻿/* ===== RESET & BASE ===== */
+/* ===== RESET & BASE ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden; }
@@ -249,9 +249,12 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 .music-player {
     position: fixed; bottom: 30px; right: 30px; z-index: 1001;
     display: flex; align-items: center; gap: 10px;
-    background: white; padding: 10px 16px; border-radius: 50px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    border: 1px solid rgba(102,126,234,0.2);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 10px 16px; border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(102,126,234,0.18), 0 1px 0 rgba(255,255,255,0.7) inset;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 .music-btn {
     width: 44px; height: 44px; border-radius: 50%;
@@ -276,10 +279,12 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 /* ===== NAVBAR ===== */
 .navbar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
     padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(102,126,234,0.1);
-    border-bottom: 1px solid rgba(102,126,234,0.08);
+    box-shadow: 0 4px 24px rgba(102,126,234,0.08), 0 1px 0 rgba(255,255,255,0.6) inset;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
     transform: translateY(-100%); transition: transform 0.5s ease;
 }
 .navbar.visible { transform: translateY(0); }
@@ -354,7 +359,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 
 /* ===== HOME SECTION ===== */
 .home-section { 
-    background-image: url("jpg(5)");
+    background-image: url("jpg(6)");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -370,7 +375,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.4) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.55) 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -546,14 +551,18 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 }
 .event-cards-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 .event-card {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 3rem; border-radius: 24px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 3rem; border-radius: 28px;
+    box-shadow: 
+        0 8px 32px rgba(102,126,234,0.12),
+        0 1px 0 rgba(255,255,255,0.8) inset,
+        0 -1px 0 rgba(255,255,255,0.2) inset;
+    border: 1px solid rgba(255,255,255,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
 }
-.event-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.2); }
+.event-card:hover { transform: translateY(-10px); box-shadow: 0 24px 60px rgba(102,126,234,0.18), 0 1px 0 rgba(255,255,255,0.9) inset; }
 .event-card-icon {
     width: 70px; height: 70px; border-radius: 20px;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -612,13 +621,14 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
     gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0;
 }
 .countdown-item {
-    background: rgba(255,255,255,0.95); 
-    backdrop-filter: blur(10px);
-    padding: 2.5rem 3rem; border-radius: 24px; text-align: center; min-width: 130px;
-    border: 2px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 2.5rem 3rem; border-radius: 28px; text-align: center; min-width: 130px;
+    border: 1px solid rgba(255,255,255,0.4);
     box-shadow: 
-        0 15px 45px rgba(0,0,0,0.15),
-        inset 0 1px 0 rgba(255,255,255,0.8);
+        0 8px 32px rgba(0,0,0,0.1),
+        0 1px 0 rgba(255,255,255,0.8) inset;
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -784,11 +794,14 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 }
 .location-card {
     display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 3.5rem; border-radius: 28px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 3.5rem; border-radius: 32px;
+    box-shadow: 
+        0 8px 32px rgba(102,126,234,0.12),
+        0 1px 0 rgba(255,255,255,0.8) inset;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 .location-icon-big {
     width: 80px; height: 80px; border-radius: 24px;
@@ -858,11 +871,14 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 }
 .rsvp-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 .rsvp-form-card, .rsvp-messages-card {
-    background: rgba(255, 255, 255, 0.85); 
-    padding: 2.5rem; border-radius: 24px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 2.5rem; border-radius: 28px;
+    box-shadow: 
+        0 8px 32px rgba(102,126,234,0.12),
+        0 1px 0 rgba(255,255,255,0.8) inset;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 .rsvp-form-card h3, .rsvp-messages-card h3 {
     font-size: 1.4rem; font-weight: 700; color: #2d3748; margin-bottom: 2rem;
@@ -877,12 +893,14 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 }
 .form-group label i { color: #667eea; }
 .form-group input, .form-group textarea {
-    width: 100%; padding: 0.9rem 1.2rem; border: 2px solid rgba(102,126,234,0.15);
-    border-radius: 12px; font-family: "Poppins", sans-serif; font-size: 0.95rem;
-    color: #2d3748; transition: border-color 0.3s ease; outline: none; resize: none;
-    background: #fafbff;
+    width: 100%; padding: 0.9rem 1.2rem; border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 14px; font-family: "Poppins", sans-serif; font-size: 0.95rem;
+    color: #2d3748; transition: all 0.3s ease; outline: none; resize: none;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-.form-group input:focus, .form-group textarea:focus { border-color: #667eea; background: white; }
+.form-group input:focus, .form-group textarea:focus { border-color: rgba(102,126,234,0.6); background: rgba(255,255,255,0.7); box-shadow: 0 0 0 3px rgba(102,126,234,0.1); }
 .radio-group { display: flex; gap: 1rem; }
 .radio-label {
     flex: 1; cursor: pointer;
@@ -910,7 +928,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 .messages-list::-webkit-scrollbar { width: 4px; }
 .messages-list::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
 .messages-list::-webkit-scrollbar-thumb { background: #667eea; border-radius: 4px; }
-.message-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: #fafbff; border-radius: 16px; border: 1px solid rgba(102,126,234,0.08); }
+.message-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.35); }
 .message-avatar {
     width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -967,6 +985,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
     .home-section {
         background-position: center center;
         background-size: cover;
+        background-attachment: scroll;
         padding: 2rem 0;
     }
     .home-content { 
@@ -997,7 +1016,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
         background-position: center center;
         background-size: cover;
         background-attachment: scroll;
-        min-height: 100vh;
+        min-height: 100svh;
         display: flex;
         align-items: center;
         justify-content: center;

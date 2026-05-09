@@ -1,4 +1,4 @@
-﻿// Target date
+// Target date
 const targetDate = new Date("2026-05-17T08:00:00").getTime();
 
 // Open invitation
@@ -12,6 +12,8 @@ function openInvitation() {
         main.classList.remove("hidden");
         document.getElementById("navbar").classList.add("visible");
         startAnimations();
+        // Autoplay musik saat undangan dibuka
+        startMusic();
     }, 1000);
 }
 
@@ -107,11 +109,44 @@ function startCountdown() {
 
 // Music
 let isPlaying = false;
+
+function getAudio() {
+    return document.getElementById("bgMusic");
+}
+
+function startMusic() {
+    const audio = getAudio();
+    if (!audio) return;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            isPlaying = true;
+            updateMusicUI();
+        }).catch(() => {
+            // Autoplay diblokir browser — biarkan user klik manual
+            isPlaying = false;
+            updateMusicUI();
+        });
+    }
+}
+
 function toggleMusic() {
+    const audio = getAudio();
+    if (!audio) return;
+    if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+    } else {
+        audio.play();
+        isPlaying = true;
+    }
+    updateMusicUI();
+}
+
+function updateMusicUI() {
     const wave = document.getElementById("musicWave");
     const icon = document.getElementById("musicIcon");
-    isPlaying = !isPlaying;
-    if(isPlaying) {
+    if (isPlaying) {
         wave.classList.remove("paused");
         icon.className = "fas fa-music";
     } else {
@@ -202,8 +237,23 @@ function submitRSVP(e) {
     `;
     list.insertBefore(item, list.firstChild);
     
+    // --- INTEGRASI WHATSAPP ---
+    // Ganti nomor di bawah jika ingin dikirim ke nomor lain (gunakan format 62...)
+    const myPhoneNumber = "6285286084353"; 
+    const statusHadir = attendance === "hadir" ? "HADIR" : "TIDAK HADIR";
+    
+    const waMessage = `Happy confirmation day yaa ecca!`;
+    
+    const encodedMessage = encodeURIComponent(waMessage);
+    const waUrl = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
+    
     document.getElementById("rsvpForm").reset();
-    showToast("Terima kasih! Ucapan Anda telah terkirim 💝");
+    showToast("Terima kasih! Membuka WhatsApp... 💝");
+
+    // Buka WhatsApp di tab baru setelah 1.5 detik agar user sempat baca toast
+    setTimeout(() => {
+        window.open(waUrl, "_blank");
+    }, 1500);
 }
 
 // Toast
