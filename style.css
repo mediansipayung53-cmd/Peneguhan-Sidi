@@ -519,6 +519,55 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
     text-shadow: 0 2px 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
 }
 
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 3;
+    animation: fadeInUp 1s ease forwards 1.5s;
+    opacity: 0;
+    cursor: pointer;
+}
+.scroll-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(74, 85, 104, 0.8);
+    text-shadow: 0 1px 6px rgba(255,255,255,0.9);
+}
+.scroll-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+.scroll-arrow i {
+    font-size: 0.9rem;
+    color: rgba(102, 126, 234, 0.85);
+    line-height: 1;
+    filter: drop-shadow(0 1px 4px rgba(255,255,255,0.8));
+}
+.scroll-arrow i:nth-child(1) {
+    animation: scrollBounce 1.4s ease-in-out infinite;
+    opacity: 0.5;
+    margin-bottom: -4px;
+}
+.scroll-arrow i:nth-child(2) {
+    animation: scrollBounce 1.4s ease-in-out infinite 0.25s;
+    opacity: 1;
+}
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50%       { transform: translateY(6px); opacity: 1; }
+}
+
 /* ===== EVENT SECTION ===== */
 .event-section { 
     background: linear-gradient(135deg, #e8d5f2 0%, #f4e4f7 50%, #d4e8f7 100%);
