@@ -14,6 +14,8 @@ function openInvitation() {
         startAnimations();
         // Autoplay musik saat undangan dibuka
         startMusic();
+        // Mulai auto-scroll setelah 3 detik (beri waktu user lihat halaman pertama)
+        setTimeout(startAutoScroll, 3000);
     }, 1000);
 }
 
@@ -24,6 +26,44 @@ function startAnimations() {
     createBokeh();
     startCountdown();
     observeElements();
+}
+
+// ===== AUTO SCROLL =====
+let autoScrollActive = false;
+let autoScrollRAF = null;
+const SCROLL_SPEED = 0.6; // px per frame — naikkan untuk lebih cepat, turunkan untuk lebih lambat
+
+function startAutoScroll() {
+    autoScrollActive = true;
+
+    // Hentikan otomatis saat user scroll/touch manual
+    const stopEvents = ['wheel', 'touchstart', 'touchmove', 'mousedown', 'keydown'];
+    function stopHandler() {
+        stopAutoScroll();
+        stopEvents.forEach(evt => window.removeEventListener(evt, stopHandler));
+    }
+    stopEvents.forEach(evt => window.addEventListener(evt, stopHandler, { passive: true }));
+
+    function step() {
+        if (!autoScrollActive) return;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (window.scrollY >= maxScroll) {
+            // Sudah di bawah, hentikan
+            stopAutoScroll();
+            return;
+        }
+        window.scrollBy(0, SCROLL_SPEED);
+        autoScrollRAF = requestAnimationFrame(step);
+    }
+    autoScrollRAF = requestAnimationFrame(step);
+}
+
+function stopAutoScroll() {
+    autoScrollActive = false;
+    if (autoScrollRAF) {
+        cancelAnimationFrame(autoScrollRAF);
+        autoScrollRAF = null;
+    }
 }
 
 // Particles
