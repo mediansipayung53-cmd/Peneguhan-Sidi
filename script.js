@@ -45,21 +45,12 @@ function startAutoScroll() {
         }
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (window.scrollY >= maxScroll) {
+            // Sudah di bawah, hentikan
             stopAutoScroll();
             return;
         }
         window.scrollBy({ top: SCROLL_SPEED, behavior: 'instant' });
     }, 16); // ~60fps
-
-    // Daftarkan event stop setelah 500ms agar klik tombol Open Invitation tidak langsung matikan scroll
-    setTimeout(() => {
-        const stopEvents = ['wheel', 'touchstart', 'touchmove', 'mousedown', 'keydown'];
-        function stopHandler() {
-            stopAutoScroll();
-            stopEvents.forEach(evt => window.removeEventListener(evt, stopHandler));
-        }
-        stopEvents.forEach(evt => window.addEventListener(evt, stopHandler, { passive: true }));
-    }, 500);
 }
 
 function stopAutoScroll() {
