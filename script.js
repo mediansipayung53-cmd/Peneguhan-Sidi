@@ -24,6 +24,35 @@ function startAnimations() {
     createBokeh();
     startCountdown();
     observeElements();
+    setupScrollIndicator();
+}
+
+// Scroll indicator — hilang saat user scroll
+function setupScrollIndicator() {
+    const indicator = document.querySelector('.scroll-indicator');
+    if (!indicator) return;
+
+    // Klik untuk scroll ke section berikutnya
+    indicator.addEventListener('click', () => {
+        const eventSection = document.getElementById('event');
+        if (eventSection) {
+            eventSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    // Hilang otomatis saat user mulai scroll
+    let hasScrolled = false;
+    window.addEventListener('scroll', () => {
+        if (!hasScrolled && window.scrollY > 50) {
+            hasScrolled = true;
+            indicator.classList.add('hidden-scroll');
+        }
+        // Muncul lagi jika kembali ke atas
+        if (window.scrollY <= 10) {
+            hasScrolled = false;
+            indicator.classList.remove('hidden-scroll');
+        }
+    }, { passive: true });
 }
 
 // Particles
@@ -155,6 +184,12 @@ function updateMusicUI() {
     }
 }
 
+// Navbar Mobile Toggle
+function toggleNav() {
+    const navUl = document.querySelector(".navbar ul");
+    navUl.classList.toggle("open");
+}
+
 // Scroll to section
 function scrollToSection(id) {
     const el = document.getElementById(id);
@@ -163,6 +198,12 @@ function scrollToSection(id) {
         const top = el.offsetTop - offset;
         window.scrollTo({top, behavior: "smooth"});
         updateActiveNav(id);
+    }
+    
+    // Tutup menu mobile jika sedang terbuka
+    const navUl = document.querySelector(".navbar ul");
+    if (navUl.classList.contains("open")) {
+        navUl.classList.remove("open");
     }
 }
 
