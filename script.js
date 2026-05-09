@@ -30,39 +30,43 @@ function startAnimations() {
 
 // ===== AUTO SCROLL =====
 let autoScrollActive = false;
-let autoScrollRAF = null;
-const SCROLL_SPEED = 0.6; // px per frame — naikkan untuk lebih cepat, turunkan untuk lebih lambat
+let autoScrollInterval = null;
+const SCROLL_SPEED = 1.2; // px per tick — lebih besar = lebih cepat
 
 function startAutoScroll() {
+    // Pastikan sudah scroll ke posisi paling atas dulu
+    window.scrollTo(0, 0);
     autoScrollActive = true;
 
-    // Hentikan otomatis saat user scroll/touch manual
-    const stopEvents = ['wheel', 'touchstart', 'touchmove', 'mousedown', 'keydown'];
-    function stopHandler() {
-        stopAutoScroll();
-        stopEvents.forEach(evt => window.removeEventListener(evt, stopHandler));
-    }
-    stopEvents.forEach(evt => window.addEventListener(evt, stopHandler, { passive: true }));
-
-    function step() {
-        if (!autoScrollActive) return;
+    autoScrollInterval = setInterval(() => {
+        if (!autoScrollActive) {
+            clearInterval(autoScrollInterval);
+            return;
+        }
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if (window.scrollY >= maxScroll) {
-            // Sudah di bawah, hentikan
             stopAutoScroll();
             return;
         }
-        window.scrollBy(0, SCROLL_SPEED);
-        autoScrollRAF = requestAnimationFrame(step);
-    }
-    autoScrollRAF = requestAnimationFrame(step);
+        window.scrollBy({ top: SCROLL_SPEED, behavior: 'instant' });
+    }, 16); // ~60fps
+
+    // Daftarkan event stop setelah 500ms agar klik tombol Open Invitation tidak langsung matikan scroll
+    setTimeout(() => {
+        const stopEvents = ['wheel', 'touchstart', 'touchmove', 'mousedown', 'keydown'];
+        function stopHandler() {
+            stopAutoScroll();
+            stopEvents.forEach(evt => window.removeEventListener(evt, stopHandler));
+        }
+        stopEvents.forEach(evt => window.addEventListener(evt, stopHandler, { passive: true }));
+    }, 500);
 }
 
 function stopAutoScroll() {
     autoScrollActive = false;
-    if (autoScrollRAF) {
-        cancelAnimationFrame(autoScrollRAF);
-        autoScrollRAF = null;
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
     }
 }
 
