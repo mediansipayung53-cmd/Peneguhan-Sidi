@@ -1,7 +1,7 @@
 /* ===== RESET & BASE ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100%; }
+body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden; width: 100%; max-width: 100%; position: relative; }
 .hidden { display: none !important; }
 
 /* ===== COVER PAGE ===== */
@@ -950,7 +950,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
 .form-group label i { color: #667eea; }
 .form-group input, .form-group textarea {
     width: 100%; padding: 0.9rem 1.2rem; border: 1.5px solid rgba(255,255,255,0.4);
-    border-radius: 14px; font-family: "Poppins", sans-serif; font-size: 0.95rem;
+    border-radius: 14px; font-family: "Poppins", sans-serif; font-size: 1rem;
     color: #2d3748; transition: all 0.3s ease; outline: none; resize: none;
     background: rgba(255,255,255,0.35);
     backdrop-filter: blur(8px);
@@ -1085,6 +1085,7 @@ body { font-family: "Poppins", sans-serif; line-height: 1.6; overflow-x: hidden;
         background-position: center center;
         background-size: cover;
         background-attachment: scroll;
+        min-height: 100vh;
         min-height: 100svh;
         display: flex;
         flex-direction: column;
